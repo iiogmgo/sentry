@@ -974,10 +974,30 @@ window.TestStubs = {
 
   Tags: () => {
     return [
-      {key: 'browser', name: 'Browser', canDelete: true},
-      {key: 'device', name: 'Device', canDelete: true},
-      {key: 'url', name: 'URL', canDelete: true},
-      {key: 'environment', name: 'Environment', canDelete: false},
+      {key: 'browser', name: 'Browser', canDelete: true, totalValues: 30},
+      {key: 'device', name: 'Device', canDelete: true, totalValues: 5},
+      {key: 'url', name: 'URL', canDelete: true, totalValues: 7},
+      {key: 'environment', name: 'Environment', canDelete: false, totalValues: 100},
+    ];
+  },
+
+  TagValues: () => {
+    return [
+      {key: 'browser', name: 'Browser', 'topValues': [
+          {value: 'Chrome', count: 10},
+          {value: 'Firefox', count: 5},
+      ]},
+      {key: 'device', name: 'Device', 'topValues': [
+          {value: 'iPhone', count: 1},
+          {value: 'Pixel', count: 2},
+      ]},
+      {key: 'url', name: 'URL', 'topValues': [
+          {value: 'foo.com', count: 2},
+          {value: 'bar.com', count: 5},
+      ]},
+      {key: 'environment', name: 'Environment', 'topValues': [
+          {value: 'prod', count: 100},
+      ]},
     ];
   },
 
